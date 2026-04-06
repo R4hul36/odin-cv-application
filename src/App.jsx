@@ -1,9 +1,22 @@
+import { useState } from "react"
+import Education from "./components/Education"
+import Experience from "./components/Experience"
+import PersonalInfo from "./components/PersonalInfo"
+
 
 const App = () => {
 
-    return <>
-        <h1>Hello React World</h1>
-    </>
+    const [personalInfo, setPersonalInfo] = useState({
+        name: '',
+        email: '',
+        phoneNumber: ''
+    })
+
+    return <main>
+        <PersonalInfo />
+        <Education />
+        <Experience />
+    </main>
 }
 
 export default App
