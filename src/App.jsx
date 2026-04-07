@@ -12,8 +12,12 @@ const App = () => {
         phoneNumber: ''
     })
 
+    const handlePersonalInfoChange = (e) => {
+        setPersonalInfo((prevInfo) => ({...prevInfo, [e.target.name]: e.target.value}))
+    }
+
     return <main>
-        <PersonalInfo />
+        <PersonalInfo info= {personalInfo} inputChange = {handlePersonalInfoChange}/>
         <Education />
         <Experience />
     </main>
