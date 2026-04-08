@@ -7,9 +7,13 @@ import PersonalInfo from "./components/PersonalInfo"
 const App = () => {
 
     const [personalInfo, setPersonalInfo] = useState({
-        name: '',
+        firstName: '',
+        lastName:'',
         email: '',
-        phoneNumber: ''
+        phoneNumber: '',
+        address: '',
+        zipCode: '',
+        city: ''
     })
 
     const handlePersonalInfoChange = (e) => {
