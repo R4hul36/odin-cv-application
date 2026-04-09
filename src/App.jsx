@@ -25,9 +25,11 @@ const App = () => {
         e.preventDefault()
         console.log("form submitted")
         setPersonalEditMode(false)
+        
 
     }
-
+    console.log(personalEditMode, personalInfo);
+    
     return <main>
         <PersonalInfo isEditing = {personalEditMode} onSubmit={handlePersonalFormSubmit} info= {personalInfo} inputChange = {handlePersonalInfoChange}/>
         <Education />
