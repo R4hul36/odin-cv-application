@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const PersonalInfo = ({info, inputChange}) => {
+const PersonalInfo = ({isEditing, onSubmit, info, inputChange}) => {
   return (
     <div className="personal-container">
         <div className="head">
@@ -36,7 +36,7 @@ const PersonalInfo = ({info, inputChange}) => {
               <input onChange={inputChange} value={info.city} type="text" placeholder="" id="city" name="city"/>
             </div>
             
-            <button type="submit">Save</button>
+            <button type="submit" onSubmit={onSubmit}>Save</button>
         </form>
     </div>
   )

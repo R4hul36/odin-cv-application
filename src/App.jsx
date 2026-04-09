@@ -16,12 +16,20 @@ const App = () => {
         city: ''
     })
 
+    const [personalEditMode, setPersonalEditMode] = useState(true)
+
     const handlePersonalInfoChange = (e) => {
         setPersonalInfo((prevInfo) => ({...prevInfo, [e.target.name]: e.target.value}))
     }
+    const handlePersonalFormSubmit = (e) => {
+        e.preventDefault()
+        console.log("form submitted")
+        setPersonalEditMode(false)
+
+    }
 
     return <main>
-        <PersonalInfo info= {personalInfo} inputChange = {handlePersonalInfoChange}/>
+        <PersonalInfo isEditing = {personalEditMode} onSubmit={handlePersonalFormSubmit} info= {personalInfo} inputChange = {handlePersonalInfoChange}/>
         <Education />
         <Experience />
     </main>
