@@ -28,10 +28,14 @@ const App = () => {
         
 
     }
+
+    const onEditBtnClick = () => {
+        setPersonalEditMode(true)
+    }
     console.log(personalEditMode, personalInfo);
     
     return <main>
-        <PersonalInfo isEditing = {personalEditMode} onSubmit={handlePersonalFormSubmit} info= {personalInfo} inputChange = {handlePersonalInfoChange}/>
+        <PersonalInfo onEditClick = {onEditBtnClick} isEditing = {personalEditMode} onSubmit={handlePersonalFormSubmit} info= {personalInfo} inputChange = {handlePersonalInfoChange}/>
         <Education />
         <Experience />
     </main>

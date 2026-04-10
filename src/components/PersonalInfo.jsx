@@ -1,10 +1,11 @@
 import { useState } from "react"
 
-const PersonalInfo = ({isEditing, onSubmit, info, inputChange}) => {
+const PersonalInfo = ({onEditClick, isEditing, onSubmit, info, inputChange}) => {
   if(!isEditing) {
     return(
       <>
         <h1>FORM SUBMITTED</h1>
+        <button onClick={onEditClick}>Edit</button>
       </>
     )
   }
