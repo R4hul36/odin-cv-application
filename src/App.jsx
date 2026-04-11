@@ -15,11 +15,23 @@ const App = () => {
         city: ''
     })
 
+    const [educationInfo, setEducationInfo] = useState({
+        degree:'',
+        school:'',
+        startDate: '',
+        endDate: ''
+    })
+
+
     const [personalEditMode, setPersonalEditMode] = useState(true)
 
     const handlePersonalInfoChange = (e) => {
         setPersonalInfo((prevInfo) => ({...prevInfo, [e.target.name]: e.target.value}))
     }
+    const handleEducationalInfoChange = (e) => {
+        setEducationInfo((prevInfo) => ({...prevInfo, [e.target.name]: e.target.value}))
+    }
+
     const handlePersonalFormSubmit = (e) => {
         e.preventDefault()
         console.log("form submitted")
@@ -31,11 +43,11 @@ const App = () => {
     const onEditBtnClick = () => {
         setPersonalEditMode(true)
     }
-    console.log(personalEditMode, personalInfo);
+    
     
     return <main>
         <PersonalInfo onEditClick = {onEditBtnClick} isEditing = {personalEditMode} onSubmit={handlePersonalFormSubmit} info= {personalInfo} inputChange = {handlePersonalInfoChange}/>
-        <Education />
+        <Education info = {educationInfo} inputChange = {handleEducationalInfoChange}/>
         <Experience />
     </main>
 }
