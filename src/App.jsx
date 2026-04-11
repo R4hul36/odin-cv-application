@@ -12,7 +12,6 @@ const App = () => {
         email: '',
         phoneNumber: '',
         address: '',
-        zipCode: '',
         city: ''
     })
 
