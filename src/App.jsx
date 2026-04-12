@@ -18,12 +18,13 @@ const App = () => {
     const [educationInfo, setEducationInfo] = useState({
         degree:'',
         school:'',
-        startDate: '',
-        endDate: ''
+        startYear: new Date().getFullYear().toString(),
+        endYear: ''
     })
 
 
     const [personalEditMode, setPersonalEditMode] = useState(true)
+    const [educationEditMode, setEducationEditMode] = useState(true)
 
     const handlePersonalInfoChange = (e) => {
         setPersonalInfo((prevInfo) => ({...prevInfo, [e.target.name]: e.target.value}))
