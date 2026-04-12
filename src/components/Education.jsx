@@ -1,17 +1,28 @@
 import React from 'react'
 
-const Education = ({info, inputChange}) => {
+const Education = ({onEditClick, isEditing, onSubmit, info, inputChange}) => {
 
   const {degree, school, startYear, endYear} = info
   const start = 1960
   const length = 71
   const years = Array.from({length}, (_, i) => start + i)
+
+  {if(!isEditing){
+    return(
+      <>
+       <h1>Education form submitted</h1>
+       <p>{degree} {startYear}</p>
+       <button onClick={onEditClick}>Edit</button>
+      </>
+    )
+  }}
+
   return (
     <div className="education-container">
       <div className="head">
         <h2>Education</h2>
       </div>
-      <form  className="education-form">
+      <form  className="education-form" onSubmit={onSubmit}>
         <div className="field-wrapper">
           <label htmlFor="degree">Degree </label>
           <input onChange={inputChange} value={degree} type="text"  id="degree" name="degree" required/>
@@ -26,6 +37,7 @@ const Education = ({info, inputChange}) => {
             {years.map(year => <option key={year} value={year}>{year}</option>)}
           </select>
         </div>
+        <button type="submit" >Save</button>
       </form>
     </div>
   )

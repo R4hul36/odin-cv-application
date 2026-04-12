@@ -6,6 +6,7 @@ import PersonalInfo from "./components/PersonalInfo"
 
 const App = () => {
 
+    // Personal components state and handler functions
     const [personalInfo, setPersonalInfo] = useState({
         firstName: '',
         lastName:'',
@@ -14,7 +15,23 @@ const App = () => {
         address: '',
         city: ''
     })
+    const [personalEditMode, setPersonalEditMode] = useState(true)
+    const handlePersonalInfoChange = (e) => {
+        setPersonalInfo((prevInfo) => ({...prevInfo, [e.target.name]: e.target.value}))
+    }
+    const handlePersonalFormSubmit = (e) => {
+        e.preventDefault()
+        console.log("form submitted")
+        setPersonalEditMode(false)
+        
+    }
 
+    const onPersonalEditClick = () => {
+        setPersonalEditMode(true)
+    }
+
+
+    // Education state and handle functions
     const [educationInfo, setEducationInfo] = useState({
         degree:'',
         school:'',
@@ -22,33 +39,26 @@ const App = () => {
         endYear: ''
     })
 
-
-    const [personalEditMode, setPersonalEditMode] = useState(true)
     const [educationEditMode, setEducationEditMode] = useState(true)
 
-    const handlePersonalInfoChange = (e) => {
-        setPersonalInfo((prevInfo) => ({...prevInfo, [e.target.name]: e.target.value}))
-    }
     const handleEducationalInfoChange = (e) => {
         setEducationInfo((prevInfo) => ({...prevInfo, [e.target.name]: e.target.value}))
     }
 
-    const handlePersonalFormSubmit = (e) => {
+    const handleEducationFormSubmit = (e) => {
         e.preventDefault()
-        console.log("form submitted")
-        setPersonalEditMode(false)
-        
-
+        setEducationEditMode(false)
     }
 
-    const onEditBtnClick = () => {
-        setPersonalEditMode(true)
+    const onEducationEditClick = () => {
+        setEducationEditMode(true)
     }
+
     
     
     return <main>
-        <PersonalInfo onEditClick = {onEditBtnClick} isEditing = {personalEditMode} onSubmit={handlePersonalFormSubmit} info= {personalInfo} inputChange = {handlePersonalInfoChange}/>
-        <Education info = {educationInfo} inputChange = {handleEducationalInfoChange}/>
+        <PersonalInfo onEditClick = {onPersonalEditClick} isEditing = {personalEditMode} onSubmit={handlePersonalFormSubmit} info= {personalInfo} inputChange = {handlePersonalInfoChange}/>
+        <Education onEditClick = {onEducationEditClick} isEditing={educationEditMode} onSubmit = {handleEducationFormSubmit} info = {educationInfo} inputChange = {handleEducationalInfoChange}/>
         <Experience />
     </main>
 }
