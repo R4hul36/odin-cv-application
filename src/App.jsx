@@ -36,13 +36,22 @@ const App = () => {
         degree:'',
         school:'',
         startYear: new Date().getFullYear().toString(),
-        endYear: ''
+        endYear: new Date().getFullYear().toString()
     })
 
     const [educationEditMode, setEducationEditMode] = useState(true)
 
     const handleEducationalInfoChange = (e) => {
-        setEducationInfo((prevInfo) => ({...prevInfo, [e.target.name]: e.target.value}))
+        console.log(e.target.name);
+        setEducationInfo((prevInfo)=> {
+            if(e.target.name === "startYear"){
+                if(e.target.value>prevInfo.endYear){
+                    return ({...prevInfo, startYear:e.target.value, endYear: e.target.value})
+                }
+                
+            }
+            return ({...prevInfo, [e.target.name]: e.target.value})
+        })
     }
 
     const handleEducationFormSubmit = (e) => {

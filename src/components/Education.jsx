@@ -10,8 +10,8 @@ const Education = ({onEditClick, isEditing, onSubmit, info, inputChange}) => {
   {if(!isEditing){
     return(
       <>
-       <h1>Education form submitted</h1>
-       <p>{degree} {startYear}</p>
+       <h1>Education</h1>
+       <p>{degree} {startYear}-{endYear}</p>
        <button onClick={onEditClick}>Edit</button>
       </>
     )
@@ -35,6 +35,12 @@ const Education = ({onEditClick, isEditing, onSubmit, info, inputChange}) => {
           <label htmlFor="start">Start </label>
           <select id='start' value={startYear} onChange={inputChange} name="startYear">
             {years.map(year => <option key={year} value={year}>{year}</option>)}
+          </select>
+        </div>
+        <div className="field-wrapper">
+          <label htmlFor="end">End </label>
+          <select id='end' value={endYear}  onChange={inputChange} name="endYear">
+            {years.filter(year => year>=startYear).map(year => <option key={year}  value={year}>{year}</option>)}
           </select>
         </div>
         <button type="submit" >Save</button>
