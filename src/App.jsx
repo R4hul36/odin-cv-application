@@ -63,12 +63,31 @@ const App = () => {
         setEducationEditMode(true)
     }
 
+    // Experience state and handle functions
+
+    const [experience, setExperience] = useState({
+        position: '',
+        company: '',
+        startYear: '',
+        endYear: ''
+    })
+
+    const handleExperienceInfoChange = (e) =>{
+        setExperience((prevInfo) => {
+            if(e.target.name === "startYear"){
+                if(e.target.value>prevInfo.endYear) {
+                    return {...prevInfo, startYear:e.target.value, endYear:e.target.value}
+                }
+            }
+            return {...prevInfo, [e.target.name]: e.target.value}
+        })
+    }
     
     
     return <main>
         <PersonalInfo onEditClick = {onPersonalEditClick} isEditing = {personalEditMode} onSubmit={handlePersonalFormSubmit} info= {personalInfo} inputChange = {handlePersonalInfoChange}/>
         <Education onEditClick = {onEducationEditClick} isEditing={educationEditMode} onSubmit = {handleEducationFormSubmit} info = {educationInfo} inputChange = {handleEducationalInfoChange}/>
-        <Experience />
+        <Experience info={experience} inputChange = {handleExperienceInfoChange}/>
     </main>
 }
 
