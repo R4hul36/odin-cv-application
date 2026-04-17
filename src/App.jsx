@@ -68,9 +68,11 @@ const App = () => {
     const [experience, setExperience] = useState({
         position: '',
         company: '',
-        startYear: '',
-        endYear: ''
+        startYear: new Date().getFullYear().toString(),
+        endYear: new Date().getFullYear().toString()
     })
+
+    const [experieceEditMode, setExperienceEditMode] = useState(true)
 
     const handleExperienceInfoChange = (e) =>{
         setExperience((prevInfo) => {
@@ -83,11 +85,19 @@ const App = () => {
         })
     }
     
+    const onExperienceEditClick = (e) => {
+        setExperienceEditMode(true)
+    }
+
+    const handleExperienceFormSubmit = (e) => {
+        e.preventDefault()
+        setExperienceEditMode(false)
+    }
     
     return <main>
         <PersonalInfo onEditClick = {onPersonalEditClick} isEditing = {personalEditMode} onSubmit={handlePersonalFormSubmit} info= {personalInfo} inputChange = {handlePersonalInfoChange}/>
         <Education onEditClick = {onEducationEditClick} isEditing={educationEditMode} onSubmit = {handleEducationFormSubmit} info = {educationInfo} inputChange = {handleEducationalInfoChange}/>
-        <Experience info={experience} inputChange = {handleExperienceInfoChange}/>
+        <Experience onEditClick={onExperienceEditClick} isEditing = {experieceEditMode} onSubmit = {handleExperienceFormSubmit}info={experience} inputChange = {handleExperienceInfoChange}/>
     </main>
 }
 
