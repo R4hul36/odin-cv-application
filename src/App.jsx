@@ -2,7 +2,7 @@ import { useState } from "react"
 import Education from "./components/Education"
 import Experience from "./components/Experience"
 import PersonalInfo from "./components/PersonalInfo"
-
+import './styles/app.css'
 
 const App = () => {
 

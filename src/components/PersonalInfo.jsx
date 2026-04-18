@@ -1,4 +1,5 @@
 import { useState } from "react"
+import '../styles/personal.css'
 
 const PersonalInfo = ({onEditClick, isEditing, onSubmit, info, inputChange}) => {
 
@@ -7,13 +8,17 @@ const PersonalInfo = ({onEditClick, isEditing, onSubmit, info, inputChange}) => 
   if(!isEditing) {
     return(
       <>
-        <h1>{firstName} {lastName}</h1>
+        <header className="header">
+          <h1>{firstName} {lastName}</h1>
+          <button onClick={onEditClick}>Edit</button>
+        </header>
+        
         <div className="personal-details">
           <p>{phoneNumber}</p>
           <p>{email}</p>
           <p>{address}{address && city ? "," : ""} {city}</p>
         </div>
-        <button onClick={onEditClick}>Edit</button>
+        
       </>
     )
   }

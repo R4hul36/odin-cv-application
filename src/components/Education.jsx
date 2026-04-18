@@ -1,4 +1,6 @@
 import React from 'react'
+import '../styles/education.css'
+
 
 const Education = ({onEditClick, isEditing, onSubmit, info, inputChange}) => {
 
