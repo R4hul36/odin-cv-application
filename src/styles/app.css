@@ -1,3 +1,30 @@
 body {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
     background-color: aliceblue;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+main {
+    padding: 3rem;
+    border: 1px solid black;
+    border-radius: 12px;
+    width: 40vw;
+    margin: auto;
+    margin-top: 4rem;
+}
+
+.field-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.submit-btn {
+    align-self: start;
+}
+
+input {
+    padding: 0.4rem;
 }

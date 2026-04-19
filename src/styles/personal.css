@@ -10,3 +10,18 @@
 .header button {
     align-self: center;
 }
+
+.personal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+
+.full-name {
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    flex-basis: 1;
+}
