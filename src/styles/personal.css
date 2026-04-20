@@ -7,6 +7,8 @@
     font-size: 1.2rem;
 }
 
+
+
 .header button {
     align-self: center;
 }
@@ -17,11 +19,13 @@
     gap: 1rem;
 }
 
-
+.personal-details {
+    text-align: center;
+}
 
 .full-name {
     width: 100%;
     display: flex;
     gap: 1rem;
-    flex-basis: 1;
+    
 }

@@ -1,0 +1,12 @@
+
+
+.education-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.date-selectors {
+    display: flex;
+    gap: 2rem;
+}

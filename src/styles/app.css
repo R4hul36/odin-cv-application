@@ -2,7 +2,6 @@ body {
     margin:0;
     padding:0;
     box-sizing: border-box;
-    background-color: aliceblue;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
@@ -13,6 +12,17 @@ main {
     width: 40vw;
     margin: auto;
     margin-top: 4rem;
+    background-color: aliceblue;
+}
+
+h1 {
+    margin-bottom: -5px;
+}
+
+br {
+    display: block;
+    height: 10px;
+    width: 100%;
 }
 
 .field-wrapper {
@@ -23,8 +33,19 @@ main {
 
 .submit-btn {
     align-self: start;
+    background-color: black;
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border:none;
 }
 
-input {
+input,
+select
+{
     padding: 0.4rem;
+}
+
+.date-selectors {
+    display: flex;
+    gap: 2rem;
 }

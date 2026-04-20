@@ -1,11 +1,12 @@
-import { useState } from "react"
 import '../styles/personal.css'
 
 const PersonalInfo = ({onEditClick, isEditing, onSubmit, info, inputChange}) => {
 
   const {firstName, lastName, email, phoneNumber, address, city} = info
-
-  const fullName = firstName[0].toUpperCase() + firstName.slice(1) + " " + lastName[0].toUpperCase() + lastName.slice(1)
+  let fullName
+  if(firstName && lastName){
+    fullName = firstName[0].toUpperCase() + firstName.slice(1) + " " + lastName[0].toUpperCase() + lastName.slice(1)
+  }
 
   if(!isEditing) {
     return(
@@ -16,11 +17,8 @@ const PersonalInfo = ({onEditClick, isEditing, onSubmit, info, inputChange}) => 
         </header>
         
         <div className="personal-details">
-          <p>{phoneNumber}</p>
-          <p>{email}</p>
-          <p>{address}{address && city ? "," : ""} {city}</p>
+          <p>{phoneNumber} | {email} | {address}{address && city ? "," : ""} {city}</p>
         </div>
-        
       </>
     )
   }
