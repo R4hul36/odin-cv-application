@@ -13,7 +13,10 @@ const App = () => {
         email: '',
         phoneNumber: '',
         address: '',
-        city: ''
+        city: '',
+        zipCode: '',
+        summary: '',
+
     })
     const [personalEditMode, setPersonalEditMode] = useState(true)
     const handlePersonalInfoChange = (e) => {

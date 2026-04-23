@@ -23,7 +23,9 @@
     text-align: center;
 }
 
-.full-name {
+.full-name,
+.location-group
+{
     width: 100%;
     display: flex;
     gap: 1rem;

@@ -2,7 +2,7 @@ import '../styles/personal.css'
 
 const PersonalInfo = ({onEditClick, isEditing, onSubmit, info, inputChange}) => {
 
-  const {firstName, lastName, email, phoneNumber, address, city} = info
+  const {firstName, lastName, email, phoneNumber, address, city, zipCode, summary} = info
   let fullName
   if(firstName && lastName){
     fullName = firstName[0].toUpperCase() + firstName.slice(1) + " " + lastName[0].toUpperCase() + lastName.slice(1)
@@ -17,8 +17,13 @@ const PersonalInfo = ({onEditClick, isEditing, onSubmit, info, inputChange}) => 
         </header>
         
         <div className="personal-details">
-          <p>{phoneNumber} | {email} | {address}{address && city ? "," : ""} {city}</p>
+          <p>{phoneNumber} | {email} | {address}{address && city ? ", " : ""}{city}{city && zipCode ? ", " : ""}{zipCode}</p>
         </div>
+        {summary && 
+          <div className='summary-section'>
+            <h2>Summary</h2>
+          </div>
+        }
       </>
     )
   }
@@ -50,9 +55,19 @@ const PersonalInfo = ({onEditClick, isEditing, onSubmit, info, inputChange}) => 
               <label htmlFor="address">Address</label>
               <input onChange={inputChange} value={address} type="text" placeholder="" id="address" name="address"/>
             </div>
+            <div className="location-group">
+              <div className="field-wrapper">
+                <label htmlFor="city">City</label>
+                <input onChange={inputChange} value={city} type="text" placeholder="" id="city" name="city"/>
+              </div>
+              <div className="field-wrapper">
+                <label htmlFor="zipCode">Zip Code</label>
+                <input onChange={inputChange} value={zipCode} type="text" inputMode="numeric" id="zipCode" name="zipCode" pattern='\d{5}'/>
+              </div>
+            </div>
             <div className="field-wrapper">
-              <label htmlFor="city">City</label>
-              <input onChange={inputChange} value={city} type="text" placeholder="" id="city" name="city"/>
+              <label htmlFor="city">Summary</label>
+              <textarea onChange={inputChange} value={summary} placeholder="" id="summary" name="summary" rows="5" cols="50"></textarea>
             </div>
             
             <button className="submit-btn" type="submit" >Save</button>
