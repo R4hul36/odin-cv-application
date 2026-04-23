@@ -43,7 +43,7 @@ const Experience = ({onEditClick, isEditing, onSubmit, info, inputChange}) => {
       (
         <>
           <p>{position} {startYear}-{endYear}</p>
-        <button onClick={onEditClick}>Edit</button>
+        <button onClick={onEditClick} className='edit-btn'>Edit</button>
         </>
     )}
       

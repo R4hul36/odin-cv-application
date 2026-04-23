@@ -13,7 +13,7 @@ const PersonalInfo = ({onEditClick, isEditing, onSubmit, info, inputChange}) => 
       <>
         <header className="header">
           <h1>{fullName}</h1>
-          <button onClick={onEditClick}>Edit</button>
+          <button onClick={onEditClick} className='edit-btn'>Edit</button>
         </header>
         
         <div className="personal-details">

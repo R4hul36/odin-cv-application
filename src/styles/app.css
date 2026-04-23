@@ -31,6 +31,10 @@ br {
     width: 100%;
 }
 
+button {
+    cursor: pointer;
+}
+
 .submit-btn {
     align-self: start;
     background-color: black;
@@ -48,4 +52,11 @@ select
 .date-selectors {
     display: flex;
     gap: 2rem;
+}
+
+.edit-btn {
+    color: white;
+    background-color: rgb(12, 12, 150);
+    border: none;
+    padding: 0.3rem 0.8rem
 }
