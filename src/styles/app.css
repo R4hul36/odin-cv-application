@@ -1,7 +1,10 @@
-body {
+* {
     margin:0;
     padding:0;
     box-sizing: border-box;
+}
+
+body {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
@@ -13,10 +16,17 @@ main {
     margin: auto;
     margin-top: 4rem;
     background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    gap: 1.55rem;
 }
 
 h1 {
     margin-bottom: -5px;
+}
+
+h2 {
+    margin-bottom: 1rem;
 }
 
 br {

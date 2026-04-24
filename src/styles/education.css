@@ -6,3 +6,22 @@
     gap: 1rem;
 }
 
+.education-info {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    padding: 0.3rem
+}
+
+.edu-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-bottom: 1rem;
+    
+}
+
+.edu-group > p:nth-child(1) {
+    font-size: large;
+    font-weight: 700;
+}

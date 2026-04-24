@@ -11,10 +11,16 @@ const Education = ({onEditClick, isEditing, onSubmit, info, inputChange}) => {
 
   {if(!isEditing){
     return(
-      <div >
+      <div>
         <div className="head"></div>
-       <h2>Education</h2>
-       <p>{degree} {startYear}-{endYear}</p>
+        <h2>Education</h2>
+        <div className="education-info">
+          <div className="edu-group">
+            <p>{degree}</p>
+            <p>{school}</p>
+          </div>
+          <p>{startYear}-{endYear}</p>
+        </div>
        <button onClick={onEditClick} className='edit-btn'>Edit</button>
       </div>
     )

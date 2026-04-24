@@ -19,9 +19,10 @@ const PersonalInfo = ({onEditClick, isEditing, onSubmit, info, inputChange}) => 
         <div className="personal-details">
           <p>{phoneNumber} | {email} | {address}{address && city ? ", " : ""}{city}{city && zipCode ? ", " : ""}{zipCode}</p>
         </div>
-        {summary && 
+        {summary.trim().length>0 && 
           <div className='summary-section'>
             <h2>Summary</h2>
+            <p>{summary}</p>
           </div>
         }
       </>
