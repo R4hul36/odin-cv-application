@@ -97,11 +97,16 @@ const App = () => {
         setExperienceEditMode(false)
     }
     
-    return <main>
-        <PersonalInfo onEditClick = {onPersonalEditClick} isEditing = {personalEditMode} onSubmit={handlePersonalFormSubmit} info= {personalInfo} inputChange = {handlePersonalInfoChange}/>
-        <Education onEditClick = {onEducationEditClick} isEditing={educationEditMode} onSubmit = {handleEducationFormSubmit} info = {educationInfo} inputChange = {handleEducationalInfoChange}/>
-        <Experience onEditClick={onExperienceEditClick} isEditing = {experieceEditMode} onSubmit = {handleExperienceFormSubmit}info={experience} inputChange = {handleExperienceInfoChange}/>
-    </main>
+    return( 
+        <>
+            <h1 className="page-title">CV Builder</h1>
+            <main>
+                <PersonalInfo onEditClick = {onPersonalEditClick} isEditing = {personalEditMode} onSubmit={handlePersonalFormSubmit} info= {personalInfo} inputChange = {handlePersonalInfoChange}/>
+                <Education onEditClick = {onEducationEditClick} isEditing={educationEditMode} onSubmit = {handleEducationFormSubmit} info = {educationInfo} inputChange = {handleEducationalInfoChange}/>
+                <Experience onEditClick={onExperienceEditClick} isEditing = {experieceEditMode} onSubmit = {handleExperienceFormSubmit}info={experience} inputChange = {handleExperienceInfoChange}/>
+            </main>
+        </>
+    )
 }
 
 export default App

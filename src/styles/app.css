@@ -25,6 +25,11 @@ h1 {
     margin-bottom: -5px;
 }
 
+.page-title {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
 h2 {
     margin-bottom: 0.2rem;
 }
