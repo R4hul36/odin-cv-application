@@ -42,7 +42,13 @@ const Experience = ({onEditClick, isEditing, onSubmit, info, inputChange}) => {
       ) : 
       (
         <>
-          <p>{position} {startYear}-{endYear}</p>
+        <div className="experience-info">
+          <div className="exp-group">
+            <p>{position}</p>
+            <p>{company}</p>
+          </div>
+          <p>{startYear}-{endYear}</p>
+        </div>
         <button onClick={onEditClick} className='edit-btn'>Edit</button>
         </>
     )}

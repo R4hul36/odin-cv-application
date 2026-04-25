@@ -5,3 +5,23 @@
     flex-direction: column;
     gap: 1rem;
 }
+
+.experience-info {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    padding: 0.3rem
+}
+
+.exp-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-bottom: 1rem;
+    
+}
+
+.exp-group > p:nth-child(1) {
+    font-size: large;
+    font-weight: 700;
+}
